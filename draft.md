@@ -30,6 +30,7 @@ Séance 2:
 Séance 3:
 - pilotage du robot.
 - pilotage du robot avec le joystick
+- utiliser les paramètres !!
 
 Séance 4:
 - Odometrie: comprendre le noeud odom
@@ -68,8 +69,10 @@ ip address
 Routeur: 192.168.13.1 / passeword rhoban classique
 Réseau wifi: RHOBAN_100 / h12D!5j_
 
+ros-pc1: 64:5D:86:C7:17:D5 ==> 192.168.13.103
+
 mac Turtle 1: 
-  rasp : D8-3A-DD-36-AE-7E   ==> 192.168.13.101
+  rasp : D8-3A-DD-36-AE-7E   ==> 192.168.13.?
   create: 4C-B9-EA-2E-96-7D  ==> 192.168.13.102 
 mac Turtle 2:
   raps: D8-3A-DD-B8-71-D1 ==> 192.168.13.101
@@ -252,3 +255,15 @@ ouvrir ssh sur le PC:
 sudo apt install openssh-server
 sudo systemctl enable ssh
 sudo systemctl start ssh
+
+
+- construction de map
+
+> ros2 launch turtlebot4_navigation slam.launch.py
+
+Attendre , la map n'apparait que quelques instants après le lancement le temps que la map s'initialise.
+
+pour la sauvegarde de la map:
+> ros2 service call /slam_toolbox/save_map slam_toolbox/srv/SaveMap
+(ca ne marche pas en mettant un nom de map)
+
