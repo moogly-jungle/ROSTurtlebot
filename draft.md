@@ -65,7 +65,7 @@ ros2 interface show sensor_msgs/msg/BatteryState
 
 ip address
 
-Routeur: 192.168.13.1 / RhobanW00dSt0Ck
+Routeur: 192.168.13.1 / passeword rhoban classique
 Réseau wifi: RHOBAN_100 / h12D!5j_
 
 mac Turtle 1: 
@@ -240,3 +240,7 @@ Install du livre:
 
 
 ==> faire un docker ? <==
+
+
+A essayer:
+ros2 launch turtlebot4_navigation slam.launch.py
