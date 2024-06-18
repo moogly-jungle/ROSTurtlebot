@@ -244,3 +244,11 @@ Install du livre:
 
 A essayer:
 ros2 launch turtlebot4_navigation slam.launch.py
+
+
+
+ouvrir ssh sur le PC:
+
+sudo apt install openssh-server
+sudo systemctl enable ssh
+sudo systemctl start ssh

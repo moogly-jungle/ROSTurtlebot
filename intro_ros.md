@@ -4,7 +4,6 @@ Introduction à ROS2 avec Turtlebot4
 # Préliminaires
 - connexion au PC: etudiant / _turtlebot4
 
-
 # Premier pas avec ROS2
 
 

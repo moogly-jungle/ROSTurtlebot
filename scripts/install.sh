@@ -32,5 +32,6 @@ cd ~/turtlebot4_ws
 rosdep install --from-path src -yi --rosdistro humble
 colcon build --symlink-install
 echo "source ~/turtlebot4_ws/install/setup.bash" >> ~/.bashrc
+cd ~
+git clone https://github.com/moogly-jungle/TP_ROS.git
 echo "L'installation est terminée ! Have fun ..."
-
