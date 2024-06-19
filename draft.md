@@ -70,13 +70,22 @@ Routeur: 192.168.13.1 / passeword rhoban classique
 Réseau wifi: RHOBAN_100 / h12D!5j_
 
 ros-pc1: 64:5D:86:C7:17:D5 ==> 192.168.13.103
+ros-pc2: D4:25:8B:93:30:0F ==> 192.168.13.105
+ros-pc3: 64:5D:86:C7:17:C6 ==> 192.168.13.107
+ros-pc4: 4C:1D:96:38:B4:4F ==> 192.168.13.108
+ros-pc5: 4C:1D:96:39:3D:D4 ==> 192.168.13.111
+
 
 mac Turtle 1: 
-  rasp : D8-3A-DD-36-AE-7E   ==> 192.168.13.?
-  create: 4C-B9-EA-2E-96-7D  ==> 192.168.13.102 
+  rasp : D8-3A-DD-36-AE-7E   ==> 192.168.13.103 ?
+  create: 4C-B9-EA-2E-96-7D  ==> 192.168.13.104 ?
 mac Turtle 2:
-  raps: D8-3A-DD-B8-71-D1 ==> 192.168.13.101
-  create: 50-14-79-44-68-EF ==> 192.168.13.104
+  rasp: D8-3A-DD-B8-71-D1 ==> 192.168.13.101
+  create: 50-14-79-44-68-EF ==> 192.168.13.102
+mac Turtle 3:
+  rasp: D8-3A-DD-34-F1-8C ==> 192.168.13.109
+  create: 4C:B9:EA:2E:8B:E6 ==> 192.168.13.110
+
 
 Essaie de déplacement au clavier: ok
 > ros2 run teleop_twist_keyboard teleop_twist_keyboard

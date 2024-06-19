@@ -87,8 +87,11 @@ Vous obtiendrez des informations plus précise (si le message est bien rédigé!
     - `/diagnostics`
 Répondez aux questions suivantes:
     - en quoi sont exprimées les vitesses des roues ?
-{soluce: `ros2 topic info /wheel_vels` puis `ros2 interface show irobot_...TODO`}
-    - TODO: diagnostics ?
+{soluce: `ros2 topic info /wheel_vels` puis `ros2 interface show irobot_create_msgs/msg/WheelVels`}
+    - quel sont les types des informations fournies par `odom` et à quoi servent-ils ?
+    {soluce: PoseWithCovariance, Pose, Point, Quaternion}
+
+- toujours en ligne de commande, en utilisant la topic `cmd_vel`, mais cette fois pour publier dedans, faite bouger le robot ! Le robot a un certain temps de latence, il faut publier plusieurs fois avant d'avoir un résultat, n'hésitez pas à consultez l'aide de la commande que vous utiliserez. 
 
 ## Ecriture d'un Noeud ROS
 
@@ -105,23 +108,7 @@ Dans cette partie, on va écrire notre premier noeud ROS.
 
 ## Déplacements du robot
 
-- Ecrire un noeud qui fait avancer le robot pendant 5 secondes, et le fait tourner sur lui-même pendant 5 secondes dans le sens trigo.
-
-TODO: doc sur l'odométrie.
-
-
-
-TODO:
-- Odometrie: comprendre le noeud odom
-- un noeud ros pour se rendre à un point donné, avec l'odométrie
-- se rendre à un point donné avec l'odométrie en évitant les obstacles au bumper
-- se rendre à un point donné avec l'odométrie en évitant les obstacle au lidar. 
-
-
-- navigation / slam
-- mise en forme de la carte
-- mission prise de photo, on clique sur la carte, et le robot va prendre une photo
-
+- Ecrire un noeud qui fait avancer le robot pendant 5 secondes, et le fait tourner sur lui-même pendant 5 secondes dans le sens trigo. Vous vous inspirerez de l'exemple pour publier dans la topic /cmd_vel
 
 # Annexes
 
@@ -131,6 +118,36 @@ TODO:
 installation de 
 - RO2 humble (https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html)
 - puis Turtlebot4 (https://turtlebot.github.io/turtlebot4-user-manual/)
+```
+sudo apt update
+sudo apt install -y software-properties-common
+sudo add-apt-repository universe -y
+sudo apt update && sudo apt install curl -y
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+sudo apt update -y
+sudo apt upgrade -y
+
+sudo apt install -y ros-humble-desktop
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+source /opt/ros/humble/setup.bash
+sudo apt install -y ros-dev-tools
+sudo rosdep init
+rosdep update
+source ~/.bashrc
+sudo apt install -y ros-humble-turtlebot4-desktop
+mkdir -p ~/turtlebot4_ws/src
+cd ~/turtlebot4_ws/src
+git clone https://github.com/turtlebot/turtlebot4.git -b humble
+cd ~/turtlebot4_ws
+rosdep install --from-path src -yi --rosdistro humble
+colcon build --symlink-install
+sudo apt install ros-humble-turtlebot4-navigation -y
+echo "source ~/turtlebot4_ws/install/setup.bash" >> ~/.bashrc
+cd ~
+git clone https://github.com/moogly-jungle/TP_ROS.git
+echo "L'installation est terminée ! Have fun ..."
+```
 
 
 

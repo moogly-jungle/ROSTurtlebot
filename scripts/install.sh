@@ -4,10 +4,8 @@ sudo apt update -y
 sudo apt upgrade -y
 sudo apt install -y git-all
 sudo apt install -y emacs
-echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+echo "alias emacs=\"emacs -nw\"" >> ~/.bashrc
 sudo apt install -y curl
-# ssh-keygen -t rsa -q -f "$HOME/.ssh/id_rsa" -N ""
-
 
 sudo apt install -y software-properties-common
 sudo add-apt-repository universe -y
